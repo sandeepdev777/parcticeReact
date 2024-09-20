@@ -1,0 +1,33 @@
+.shop-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+  }
+  
+  .shop-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .shop-item p {
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  .shop-item button {
+    padding: 10px 20px;
+    background-color: #2874f0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .shop-item button:hover {
+    background-color: #1a5bb8;
+  }

@@ -1,23 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './index.css';
-import LoginPage from './components/LoginPage';
-import RegisterPage from './components/RegisterPage';
-import ShoppingCartPage from './components/ShoppingCartPage';
-import LandingPage from './components/LandingPage';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
+import './App.css';
+import Navbar from './components/Navbar';
+import LandingPage from './pages/LandingPage/LandingPage';
+
+import Cart from './pages/Cart/Cart';
+import Shop from './pages/Shop/Shop';
+import { CartProvider } from './ShopContext/CartContext';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/home" element={<LandingPage />} />
-          <Route path="/cart" element={<ShoppingCartPage />} />
-        </Routes>
-      </div>
-    </Router>
+    <CartProvider>
+      <BrowserRouter>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/cart" element={<div><Navbar/><Cart /></div>} />
+            <Route path="/shop" element={<div><Navbar/><Shop /></div>} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
